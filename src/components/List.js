@@ -3,7 +3,8 @@ import {
   Text,
   View,
   StyleSheet,
-  FlatList
+  FlatList,
+  Image
 } from 'react-native'
 
 const shows_first = [
@@ -88,14 +89,30 @@ class List extends Component {
 
   _renderItem(item) {
     return(
-      <Text>{item.name}</Text>
+
+      <Image style={{width: 120, height: 180}} source={{uri: item.image}} />
     )
   }
+
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: 5,
+          backgroundColor: "#fff",
+
+        }}
+      />
+    );
+  };
 
   render() {
     return(
       <View style={{flex: 1}}>
         <FlatList
+          horizontal
+          ItemSeparatorComponent={this.renderSeparator}
           renderItem = {({item}) => this._renderItem(item)}
           data = {shows_first}
         />
