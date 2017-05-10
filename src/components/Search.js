@@ -54,6 +54,25 @@ class Search extends  Component {
       text: ''
     }
   }
+
+
+  filter(text){
+    const newData = shows_first.filter(function(item) {
+        const itemData = item.name.toUpperCase()
+        const textData = text.toUpperCase()
+        return itemData.indexOf(textData) > -1
+    })
+
+    this.setState({
+      data: newData,
+      text: text,
+
+    })
+  }
+
+  deleteData() {
+    this.setState({text: '', data: '' })
+  }
   render(){
     return (
       <View style={styles.container} >
@@ -72,13 +91,16 @@ class Search extends  Component {
             placeholderTextColor="grey"
           />
 
-        <Icon
-          name="times-circle"
-          color="grey"
-          size={18}
-          style={styles.iconInputClose}
-        />
-
+        {this.state.text ?
+        <TouchableWithoutFeedback onPress={() => this.deleteData()} >
+          <Icon
+            name="times-circle"
+            color="grey"
+            size={18}
+            style={styles.iconInputClose}
+          />
+        </TouchableWithoutFeedback>
+        :null}
 
         <TouchableWithoutFeedback style={styles.cancelButton} >
             <View style={styles.containerButton} >
