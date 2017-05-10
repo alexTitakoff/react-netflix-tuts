@@ -72,6 +72,14 @@ class Search extends  Component {
             placeholderTextColor="grey"
           />
 
+        <Icon
+          name="times-circle"
+          color="grey"
+          size={18}
+          style={styles.iconInputClose}
+        />
+
+
         <TouchableWithoutFeedback style={styles.cancelButton} >
             <View style={styles.containerButton} >
               <Text style={styles.cancelButtonText} >Cancel</Text>
@@ -106,6 +114,12 @@ const styles = StyleSheet.create({
     top: 5,
     left: 15,
     zIndex: 1,
+    backgroundColor: 'transparent'
+  },
+  iconInputClose:{
+    position: 'absolute',
+    top: 5,
+    right: 90,
     backgroundColor: 'transparent'
   },
   input: {
