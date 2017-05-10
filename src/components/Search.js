@@ -6,7 +6,9 @@ import {
   Image,
   TouchableWithoutFeedback,
   TextInput,
-  Dimensions
+  Dimensions,
+  FlatList,
+  ScrollView
 } from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -73,6 +75,13 @@ class Search extends  Component {
   deleteData() {
     this.setState({text: '', data: '' })
   }
+
+  _renderItem(item) {
+    return(
+      <Image key={item.key} style={styles.image}  source={{uri: item.image}} />
+    )
+  }
+
   render(){
     return (
       <View style={styles.container} >
@@ -109,6 +118,17 @@ class Search extends  Component {
           </TouchableWithoutFeedback>
 
         </View>
+
+
+        <ScrollView>
+          <FlatList
+            style={{marginHorizontal: 5}}
+            data={this.state.data}
+            numColumns={3}
+
+            renderItem={({item}) => this._renderItem(item)}
+          />
+        </ScrollView>
     </View>
     )
   }
@@ -154,7 +174,11 @@ const styles = StyleSheet.create({
   },
   cancelButtonText: {
     color: 'white',
-
+  },
+  image: {
+    marginRight: 5,
+    width: 115,
+    height: 170,
   }
 
 })
