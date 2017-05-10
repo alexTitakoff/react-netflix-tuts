@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     height : 60,
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    backgroundColor: '#000'
   },
   logo: {
     width: 120,

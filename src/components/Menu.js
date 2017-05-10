@@ -57,7 +57,7 @@ class Menu extends Component {
                 <View style={styles.withIcon} >
                     <IonIcons
                         style={styles.iconWithText}
-                        name="md-check"
+                        name="md-checkmark"
                         color="white"
                         size={28}
                     />
@@ -83,7 +83,57 @@ const styles = StyleSheet.create({
 
   },
   menu: {
-    flex: 1
+    flex: 1,
+    width: width,
+    height: height,
+    backgroundColor: '#191919'
+  },
+  avatarContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: width / 2 + 59,
+    borderColor: '#000',
+    borderBottomWidth: 3,
+    paddingHorizontal: 20,
+    paddingVertical: 20
+  },
+  avatar: {
+    width: 60,
+    height: 60,
+    marginRight: 20
+  },
+  avatarImage: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#b3b3b3',
+    fontSize: 20
+  },
+  textWithIcon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 20,
+    borderColor: '#000',
+    borderBottomWidth: 3,
+
+  },
+  withIcon: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  scrollContainer: {
+    width: width / 2 + 59,
+
+  },
+  rightIcon: {
+    paddingRight: 20,
+  },
+  iconWithText: {
+    marginRight: 10,
+    paddingLeft: 20,
   }
 
 })
