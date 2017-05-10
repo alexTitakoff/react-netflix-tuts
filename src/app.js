@@ -42,7 +42,7 @@ class App extends Component {
         >
 
         <View style={styles.container} >
-          <Header toggle={this.toggle.bind(this)} ></Header>
+          <Header navigator={this.props.navigator} toggle={this.toggle.bind(this)} ></Header>
           <Slider></Slider>
           <List></List>
         </View>

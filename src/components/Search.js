@@ -98,6 +98,7 @@ class Search extends  Component {
             style={styles.input}
             placeholder="Search"
             placeholderTextColor="grey"
+            autoFocus={true}
           />
 
         {this.state.text ?
@@ -125,7 +126,7 @@ class Search extends  Component {
             style={{marginHorizontal: 5}}
             data={this.state.data}
             numColumns={3}
-
+            columnWrapperStyle={{marginTop: 5, marginLeft: 5}}
             renderItem={({item}) => this._renderItem(item)}
           />
         </ScrollView>
