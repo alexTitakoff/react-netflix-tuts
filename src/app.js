@@ -40,9 +40,13 @@ class App extends Component {
           isOpen={this.state.isOpen}
           onChange={(isOpen) => this.updateMenu(isOpen)}
         >
+
+        <View style={styles.container} >
           <Header toggle={this.toggle.bind(this)} ></Header>
           <Slider></Slider>
           <List></List>
+        </View>
+
         </SideMenu>
 
       </View>
