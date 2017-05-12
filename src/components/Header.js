@@ -36,7 +36,7 @@ class Header extends Component {
             />
           </TouchableWithoutFeedback>
           <Image style={styles.logo}  source = {require('../images/logo.png')}/>
-          <TouchableWithoutFeedback onPress= {() => this.navigate('secondPage') }>
+          <TouchableWithoutFeedback onPress= {() => this.navigate('Search') }>
             <Icon
               name="search"
               color="white"

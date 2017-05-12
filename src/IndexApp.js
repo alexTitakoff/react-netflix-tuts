@@ -5,6 +5,7 @@ import {
 
 import App from './app.js'
 import Search from './components/Search.js'
+import Details from './components/Details.js'
 
 
 //test routing navigator
@@ -27,6 +28,8 @@ class  IndexApp extends Component {
         return <App navigator={navigator} />
       case 'Search':
         return <Search navigator={navigator} />
+      case 'Details':
+        return <Details navigator={navigator} passProps={route.passProps} />
 
 
       //test routing

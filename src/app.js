@@ -37,7 +37,8 @@ class App extends Component {
   //обработчик навигатора
   navigate(ident){
     this.props.navigator.push({
-      ident
+      ident,
+      passProps
     })
   }
 
@@ -53,7 +54,7 @@ class App extends Component {
         <View style={styles.container} >
           <Header navigator={this.props.navigator} toggle={this.toggle.bind(this)} ></Header>
           <Slider></Slider>
-          <List></List>
+          <List navigator={this.props.navigator} ></List>
         </View>
 
         </SideMenu>

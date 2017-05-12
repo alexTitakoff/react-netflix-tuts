@@ -4,7 +4,8 @@ import {
   View,
   StyleSheet,
   FlatList,
-  Image
+  Image,
+  TouchableWithoutFeedback
 } from 'react-native'
 
 const shows_first = [
@@ -86,11 +87,21 @@ const shows_second = [
 
 class List extends Component {
 
+  newPushContent(item){
+    this.props.navigator.push({
+      ident: 'Details',
+      passProps: {
+        item
+      }
+    })
+  }
 
   _renderItem(item) {
     return(
+      <TouchableWithoutFeedback onPress= {() => this.newPushContent(item) } >
+          <Image style={{width: 120, height: 180}} source={{uri: item.image}} />
+      </TouchableWithoutFeedback>
 
-      <Image style={{width: 120, height: 180}} source={{uri: item.image}} />
     )
   }
 
@@ -146,7 +157,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    
+
   }
 })
 export default List

@@ -112,7 +112,7 @@ class Search extends  Component {
         </TouchableWithoutFeedback>
         :null}
 
-        <TouchableWithoutFeedback style={styles.cancelButton} >
+        <TouchableWithoutFeedback style={styles.cancelButton} onPress= {() => this.props.navigator.pop() } >
             <View style={styles.containerButton} >
               <Text style={styles.cancelButtonText} >Cancel</Text>
             </View>
@@ -172,6 +172,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     paddingLeft: 30,
     borderRadius: 3,
+    color: '#fff',
   },
   cancelButtonText: {
     color: 'white',
