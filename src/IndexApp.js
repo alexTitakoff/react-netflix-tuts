@@ -14,30 +14,6 @@ import TestRoute2 from './components/TestRoute2.js'
 
 class  IndexApp extends Component {
 
-  // _renderScene(route,navgator) {
-  //   var navigator = {navigator}
-  //
-  //   switch (route.ident) {
-  //     case 'App':
-  //       return (
-  //         <App {...navigator} />
-  //       )
-  //     case 'Search':
-  //       return (
-  //         <Search {...navigator} />
-  //        )
-  //     case 'TestRoute':
-  //        return (
-  //          <TestRoute {...navigator} />
-  //         )
-  //     case 'secondPage':
-  //        return (
-  //          <TestRoute2 {...navigator} />
-  //         )
-  //   }
-  // }
-
-
 
   constructor(){
     super()
@@ -47,6 +23,13 @@ class  IndexApp extends Component {
   _renderScene(route, navigator) {
 
     switch (route.ident) {
+      case 'App':
+        return <App navigator={navigator} />
+      case 'Search':
+        return <Search navigator={navigator} />
+
+
+      //test routing
       case 'TestRoute':
         return <TestRoute navigator={navigator} />
       case 'secondPage':
@@ -57,7 +40,7 @@ class  IndexApp extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ident: 'TestRoute'}}
+        initialRoute={{ident: 'App'}}
         renderScene={this._renderScene}
       />
     )

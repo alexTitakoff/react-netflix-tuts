@@ -20,6 +20,8 @@ class App extends Component {
     this.state = {
       isOpen: false
     }
+
+    this.navigate = this.navigate.bind(this)
   }
 
   updateMenu(isOpen) {
@@ -29,6 +31,13 @@ class App extends Component {
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
+    })
+  }
+
+  //обработчик навигатора
+  navigate(ident){
+    this.props.navigator.push({
+      ident
     })
   }
 
