@@ -29,7 +29,7 @@ class  IndexApp extends Component {
       case 'Search':
         return <Search navigator={navigator} />
       case 'Details':
-        return <Details navigator={navigator} passProps={route.passProps} />
+        return <Details navigator={navigator}  {...route.passProps} />
 
 
       //test routing
