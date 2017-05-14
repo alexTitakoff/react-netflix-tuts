@@ -50,7 +50,7 @@ class Details extends Component {
 
 
           <View style={styles.description} >
-            <Text style={styles.text} >{description}</Text>
+            <Text style={[styles.text, styles.light]} >{description}</Text>
           </View>
 
           <Text style={styles.text} >Cast: {cast}</Text>
@@ -64,7 +64,9 @@ class Details extends Component {
                 color="grey"
                 size={25}
               />
+            <Text style={styles.text}>My List</Text>
             </View>
+
             <View style={styles.myShareIcon} >
               <Icon
                 style={styles.shareIcon}
@@ -72,7 +74,9 @@ class Details extends Component {
                 color="grey"
                 size={25}
               />
+            <Text style={styles.text} >Share</Text>
             </View>
+
           </View>
 
         </View>
@@ -110,15 +114,42 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   subTitleText: {
-    marginRight: 5,
+    marginRight: 20,
 
   },
   text: {
-    color: '#b3b3b3'
+    color: '#b3b3b3',
+    fontSize: 16,
   },
   shareListIcons: {
-
+    flexDirection: 'row',
+    marginVertical: 30
+  },
+  listIcon: {
+    height: 25
+  },
+  shareIcon: {
+    height: 25
+  },
+  myListIcon: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 40
+  },
+  myShareIcon: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 40
+  },
+  description: {
+    marginVertical: 10,
+  },
+  light: {
+    fontWeight: '200'
   }
+
 
 })
 
