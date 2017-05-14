@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
-//import IonIcons from 'react-ionicons'
+import IonIcons from 'react-native-vector-icons/Ionicons'
 
 const {width, height} = Dimensions.get('window')
 
@@ -58,7 +58,7 @@ class Details extends Component {
 
           <View style={styles.shareListIcons} >
             <View style={styles.myListIcon}>
-              <Icon
+              <IonIcons
                 style={styles.listIcon}
                 name="md-checkmark"
                 color="grey"
