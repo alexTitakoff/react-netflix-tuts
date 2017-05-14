@@ -11,6 +11,7 @@ import {
 } from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
+//import IonIcons from 'react-ionicons'
 
 const {width, height} = Dimensions.get('window')
 
@@ -18,9 +19,9 @@ class Details extends Component {
 
   render(){
     const {name} = this.props.item
-    const {thumbnail, cast, description, year, season,numOfEpisodes} = this.props.item.details
+    const {thumbnail, cast, description,creator , year, season,numOfEpisodes} = this.props.item.details
     return(
-      <ScrollView>
+      <ScrollView style={styles.container} >
         <Image
           style = {styles.thumbnail}
           source = {{uri: thumbnail}}
@@ -42,10 +43,38 @@ class Details extends Component {
 
         <View style={styles.descriptionContainer} >
           <View style={styles.subtitle} >
-              <Text style={styles.text, styles.subTitleText} >{year}</Text>
-              <Text style={styles.text, styles.subTitleText} >{numOfEpisodes}</Text>
-              <Text style={styles.text, styles.subTitleText}>{season} Season</Text>
+              <Text style={[styles.text, styles.subTitleText]} >{year}</Text>
+              <Text style={[styles.text, styles.subTitleText]} >{numOfEpisodes}</Text>
+              <Text style={[styles.text, styles.subTitleText]}>{season} Season</Text>
           </View>
+
+
+          <View style={styles.description} >
+            <Text style={styles.text} >{description}</Text>
+          </View>
+
+          <Text style={styles.text} >Cast: {cast}</Text>
+          <Text style={styles.text} >Creator: {creator}</Text>
+
+          <View style={styles.shareListIcons} >
+            <View style={styles.myListIcon}>
+              <Icon
+                style={styles.listIcon}
+                name="md-checkmark"
+                color="grey"
+                size={25}
+              />
+            </View>
+            <View style={styles.myShareIcon} >
+              <Icon
+                style={styles.shareIcon}
+                name="share-alt"
+                color="grey"
+                size={25}
+              />
+            </View>
+          </View>
+
         </View>
       </ScrollView>
     )
@@ -57,6 +86,7 @@ class Details extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#181818'
 
   },
   thumbnail: {
@@ -71,6 +101,7 @@ const styles = StyleSheet.create({
   },
   iconPlay: {
     opacity: 0.7,
+    backgroundColor: 'transparent'
   },
   descriptionContainer: {
     paddingHorizontal: 20
@@ -79,7 +110,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   subTitleText: {
-    marginRight: 5
+    marginRight: 5,
+
+  },
+  text: {
+    color: '#b3b3b3'
+  },
+  shareListIcons: {
+
   }
 
 })
