@@ -12,6 +12,7 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 import IonIcons from 'react-native-vector-icons/Ionicons'
+import TabsEpisodes from './TabsEpisodes.js'
 
 const {width, height} = Dimensions.get('window')
 
@@ -80,6 +81,7 @@ class Details extends Component {
           </View>
 
         </View>
+        <TabsEpisodes/>
       </ScrollView>
     )
   }
