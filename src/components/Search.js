@@ -53,7 +53,8 @@ class Search extends  Component {
   constructor(props) {
     super(props)
     this.state = {
-      text: ''
+      text: '',
+      data: shows_first
     }
   }
 
@@ -130,6 +131,18 @@ class Search extends  Component {
             renderItem={({item}) => this._renderItem(item)}
           />
         </ScrollView>
+
+    <ScrollView>
+        {   this.state.data.map(function(object, i) {
+          return  <TouchableWithoutFeedback key={i}  style={styles.listview} onPress= { () =>{
+
+            }} >
+
+            <Text style={{ color: '#ffffff'}} >{object.name}</Text>
+
+           </TouchableWithoutFeedback>
+    })}
+    </ScrollView>
     </View>
     )
   }
